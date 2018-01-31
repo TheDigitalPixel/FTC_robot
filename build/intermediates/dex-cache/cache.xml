@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\.android\build-cache\27751505c2242650be6c5d22b0e642749589a57b\output\jars\libs\gson-2.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e118dd0900e4a18fb928ebb8df2d9fbda78f2b5d">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\gson-2.8.0_76e72271b3ac77ebd66d1d39b7e072f5a835ed3e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\.android\build-cache\27751505c2242650be6c5d22b0e642749589a57b\output\jars\libs\gson-extras-0.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b30c2655badcc7ce97f84e49f777b7dd154bad57">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\gson-extras-0.2.1_1635defd0682abc072b90236fa9ee13f6996562a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\.android\build-cache\414380956eb3fada1ec77f9b09d604a50c02e621\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7558c70f3b0b473ca494059b37f16ca880ac43fd">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\classes_46d224386fecb2b1faf8d05c6d7f58e743f3ad4b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\.android\build-cache\27751505c2242650be6c5d22b0e642749589a57b\output\jars\libs\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5a214d3b1b12e72f4fb0d5d5d8d0ec43c96de2b5">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_b77df41bf4ab113937e4adb116e483529d7c1157.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\.android\build-cache\27751505c2242650be6c5d22b0e642749589a57b\output\jars\libs\javac.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c576121aac49e547b39aedfb1daa29782db4166c">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\javac_616327587797fb701cc7e8896779fb344a001927.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\.android\build-cache\27751505c2242650be6c5d22b0e642749589a57b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5d8f95b7b91c8a132c514f5dbe75340305e6883b">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\classes_a3e896cf6fb688972ee3f821d8022919249635c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\FtcRobotController\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d0c919e219a954111faa31c905d63e0e30c88b6b">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\classes_f15c50c9331d64b30a55ad4608421b7c573afa94.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\.android\build-cache\dfa245d7f9d773c197c371f253bb11954a3bc9e8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9dafed45e330aec14abcce05bdb7bbdb2a2d7092">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\classes_49ec9925ae9363a32327fd70033a2f5b49830bc9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\.android\build-cache\27751505c2242650be6c5d22b0e642749589a57b\output\jars\libs\Vuforia.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="91b46366eb9f8203073ee2935087c097c888c0ed">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\Vuforia_b89a355133f0841ea593e87caa8f5a8bb8254d61.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\.android\build-cache\6ced467446dea65eed80e94703c476c68f53798e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e444b561b0feba789cac93c5db61f08ef8c25ee6">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\classes_8bf515c8ee1974532b40c6b10f3024bec44e6768.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\.android\build-cache\2f8cf0dc20b5e1c79f19d9842d44c909d934c220\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9403be210676ed196cdcc64c7391b9ae2361c174">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\classes_75a2f2f8cb7e7d446510697b5b4ec78e5ac4ee95.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\.android\build-cache\d7b577dde07ca0acc1fe72d573f4894f14c5ab98\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1ce86a6340781abf3d876eba190efa34ae92d2f9">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\classes_6ca6bb2b806ad71c43fea124a67acc757ed11cad.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\cuian\.android\build-cache\429a5bda43017d0de63dccf29ed6912316bb1bae\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6c6d1584a392ebfee01efd98e6caaf6a9e5ac51d">
+        <dex dex="C:\Users\cuian\Documents\IdeaProjects\Robotics Team\ftc_app-3.5\TeamCode\build\intermediates\pre-dexed\debug\classes_8b06f59f73f93a22895ce3a88e70d3a8cc9b30f6.jar" />
+    </item>
+
+</items>

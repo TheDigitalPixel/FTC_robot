@@ -1,0 +1,4 @@
+#Tue Jan 23 16:30:29 EST 2018
+base.0=C\:\\Users\\cuian\\Documents\\IdeaProjects\\Robotics Team\\ftc_app-3.5\\TeamCode\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=C\:\\Users\\cuian\\Documents\\IdeaProjects\\Robotics Team\\ftc_app-3.5\\TeamCode\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
