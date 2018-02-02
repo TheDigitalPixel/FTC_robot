@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
+import java.util.*;
 
 @TeleOp
 public class AutonomousRed extends LinearOpMode{
@@ -50,31 +51,54 @@ public class AutonomousRed extends LinearOpMode{
         waitForStart();
 
         int r,b;
+        long startTime = System.currentTimeMillis();
+        long endTime = 0;
+        long elapsedTime = 0;
+        boolean foundJewel = false;
+        boolean movedJewel = false;
+        long con = 0;
+        arm.setPosition(0.5);
         while(opModeIsActive()){
             r = sensor.red();
             b = sensor.blue();
 
-            if(r >= 200){
+            if(!foundJewel && r >= 200){
+                endtime = System.currentTimeMillis();
+                elapsedtime = endtime - time + con;
+                foundJewel = true;
                 motorWheelFL.setPower(0.0);
                 motorWheelFR.setPower(0.0);
                 motorWheelBL.setPower(0.0);
                 motorWheelBR.setPower(0.0);
                 arm.setPosition(0.0);
-            }else if(b >= 200){
+                arm.setPosition(0.5);
+            }else if(!foundJewel && b >= 200){
+                endtime = System.currentTimeMillis();
+                elapsedtime = endtime - time + con;
+                foundJewel = true;
                 motorWheelFL.setPower(0.0);
                 motorWheelFR.setPower(0.0);
                 motorWheelBL.setPower(0.0);
                 motorWheelBR.setPower(0.0);
                 arm.setPosition(1.0);
-            }else{
+                arm.setPosition(0.5);
+            }else if (!foundJewel){
+                if (foundJewel) foundJewel = true;
                 motorWheelFL.setPower(1.0);
                 motorWheelFR.setPower(1.0);
                 motorWheelBL.setPower(1.0);
                 motorWheelBR.setPower(1.0);
-
+            }else if (System.currentTimeMillis() - endtime < elapsedtime) {
+                motorWheelFL.setPower(-1.0);
+                motorWheelFR.setPower(-1.0);
+                motorWheelBL.setPower(-1.0);
+                motorWheelBR.setPower(-1.0);
+            }else {
+                motorWheelFL.setPower(0.0);
+                motorWheelFR.setPower(0.0);
+                motorWheelBL.setPower(0.0);
+                motorWheelBR.setPower(0.0);
             }
-
-
         }
     }
 }
