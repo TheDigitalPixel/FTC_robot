@@ -83,7 +83,6 @@ public class AutonomousRed extends LinearOpMode{
                 arm.setPosition(1.0);
                 arm.setPosition(0.5);
             }else if (!foundJewel){
-                if (foundJewel) foundJewel = true;
                 motorWheelFL.setPower(1.0);
                 motorWheelFR.setPower(1.0);
                 motorWheelBL.setPower(1.0);
