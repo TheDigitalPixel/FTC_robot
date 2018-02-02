@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp
-public class FirstOPMainClass extends LinearOpMode{
+public class Drive extends LinearOpMode{
 
     private DcMotor motorWheelFL;
     private DcMotor motorWheelFR;
@@ -44,7 +44,8 @@ public class FirstOPMainClass extends LinearOpMode{
 
         while (opModeIsActive()) {
             telemetry.addData("Status", "Running");
-            double powerX = this.gamepad1.left_stick_x;
+            /*
+	    double powerX = this.gamepad1.left_stick_x;
             double powerY = this.gamepad1.left_stick_y;
             double leftpower = (powerY-powerX)/2;
             double rightpower = (powerY+powerX)/2;
@@ -52,6 +53,20 @@ public class FirstOPMainClass extends LinearOpMode{
             motorWheelFR.setPower(rightpower);
             motorWheelBL.setPower(leftpower);
             motorWheelBR.setPower(rightpower);
+	    */
+	    double r = Math.hypot(gamepad1.left_stick_x, gamepad1.left_stick_y);
+            double robotAngle = Math.atan2(gamepad1.left_stick_y, gamepad1.left_stick_x) - Math.PI / 4;
+            double rightX = gamepad1.right_stick_x;
+            
+	    final double v1 = r * Math.cos(robotAngle) - rightX;
+            final double v2 = -r * Math.sin(robotAngle) - rightX;
+            final double v3 = r * Math.sin(robotAngle) - rightX;
+            final double v4 = -r * Math.cos(robotAngle) - rightX;
+
+            motorWheelBL.setPower(v1);
+            motorWheelBR.setPower(v2);
+            motorWheelFL.setPower(v3);
+            motorWheelFR.setPower(v4);
             telemetry.addData("FL Motor Power", motorWheelFL.getPower());
             telemetry.addData("FR Motor Power", motorWheelFR.getPower());
             telemetry.addData("BL Motor Power", motorWheelBL.getPower());
