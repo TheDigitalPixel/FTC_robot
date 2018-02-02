@@ -14,6 +14,7 @@ public class Drive extends LinearOpMode{
     private DcMotor motorWheelBR;
     private Servo clawL;
     private Servo clawR;
+    private DcMotor linSlide;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -21,6 +22,7 @@ public class Drive extends LinearOpMode{
         motorWheelFR = hardwareMap.get(DcMotor.class, "motorWheelFR");
         motorWheelBL = hardwareMap.get(DcMotor.class, "motorWheelBL");
         motorWheelBR = hardwareMap.get(DcMotor.class, "motorWheelBR");
+        linSlide = hardwareMap.get(DcMotor.class, "linSlide");
         clawL = hardwareMap.get(Servo.class, "clawL");
         clawR = hardwareMap.get(Servo.class, "clawR");
 
@@ -75,6 +77,12 @@ public class Drive extends LinearOpMode{
             double movement = 0;
             boolean left_trigger = this.gamepad1.dpad_left;
             boolean right_trigger = this.gamepad1.dpad_right;
+            
+	    if(this.gamepad1.a) {
+                linSlide.setPower(0.25);
+	    } else if(this.gamepad1.b) {
+                linSlide.setPower(-0.25);                
+	    }
 
             movement += ((left_trigger)? 1:0) + ((right_trigger)? -1: 0);
             if((clawL.getPosition() - movement) >= 0.0 && (clawL.getPosition() - movement) <= startPositionL) clawL.setPosition(clawL.getPosition() - movement);
