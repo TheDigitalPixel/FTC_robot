@@ -17,11 +17,22 @@ public class FirstOPMainClass extends LinearOpMode{
 
     @Override
     public void runOpMode() throws InterruptedException {
-
-
-
+        motorWheelFL = hardwareMap.get(DcMotor.class, "motorWheelFL");
+        motorWheelFR = hardwareMap.get(DcMotor.class, "motorWheelFR");
+        motorWheelBL = hardwareMap.get(DcMotor.class, "motorWheelBL");
+        motorWheelBR = hardwareMap.get(DcMotor.class, "motorWheelBR");
         clawL = hardwareMap.get(Servo.class, "clawL");
         clawR = hardwareMap.get(Servo.class, "clawR");
+
+        motorWheelFL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorWheelFR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorWheelBL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        motorWheelBR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        motorWheelFL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motorWheelFR.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motorWheelBL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        motorWheelBR.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         telemetry.addData("Status", "Initialized");
         telemetry.update();
         // Wait for the game to start (driver presses PLAY)
@@ -35,8 +46,8 @@ public class FirstOPMainClass extends LinearOpMode{
             telemetry.addData("Status", "Running");
             double powerX = this.gamepad1.left_stick_x;
             double powerY = this.gamepad1.left_stick_y;
-            double leftpower = powerY-powerX;
-            double rightpower = powerY+powerX;
+            double leftpower = (powerY-powerX)/2;
+            double rightpower = (powerY+powerX)/2;
             motorWheelFL.setPower(leftpower);
             motorWheelFR.setPower(rightpower);
             motorWheelBL.setPower(leftpower);
