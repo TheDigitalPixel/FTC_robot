@@ -12,7 +12,7 @@ public class Drive extends LinearOpMode{
     private DcMotor motorWheelFR;
     private DcMotor motorWheelBL;
     private DcMotor motorWheelBR;
-    private Servo clawL;
+    private DcMotor clawL;
     private Servo clawR;
     private DcMotor linSlide;
 
@@ -23,7 +23,7 @@ public class Drive extends LinearOpMode{
         motorWheelBL = hardwareMap.get(DcMotor.class, "motorWheelBL");
         motorWheelBR = hardwareMap.get(DcMotor.class, "motorWheelBR");
         linSlide = hardwareMap.get(DcMotor.class, "linSlide");
-        clawL = hardwareMap.get(Servo.class, "clawL");
+        clawL = hardwareMap.get(DcMotor.class, "clawL");
         clawR = hardwareMap.get(Servo.class, "clawR");
 
         motorWheelFL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
