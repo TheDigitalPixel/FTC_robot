@@ -41,7 +41,7 @@ public class Drive extends LinearOpMode{
         waitForStart();
         // run until the end of the match (driver presses STOP)
 
-        double startPositionL = clawL.getPosition();
+        double startPositionL = 0;
         double startPositionR = clawR.getPosition();
 
         while (opModeIsActive()) {
@@ -85,8 +85,9 @@ public class Drive extends LinearOpMode{
 	    }
 
             movement += ((left_trigger)? 1:0) + ((right_trigger)? -1: 0);
-            if((clawL.getPosition() - movement) >= 0.0 && (clawL.getPosition() - movement) <= startPositionL) clawL.setPosition(clawL.getPosition() - movement);
-            if((clawR.getPosition() + movement) <= 1.0 && (clawL.getPosition() + movement) <= startPositionR) clawR.setPosition(clawR.getPosition() + movement);
+            clawL.setPower(0 - movement);
+            clawR.setPower(movement);
+            
 
             telemetry.addData("Left_trigger", this.gamepad1.left_trigger);
             telemetry.update();
