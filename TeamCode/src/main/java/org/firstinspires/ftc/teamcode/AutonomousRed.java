@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.ColorSensor;
@@ -7,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import java.util.*;
 
-@TeleOp
+@Autonomous
 public class AutonomousRed extends LinearOpMode{
 
     private DcMotor motorWheelFL;
@@ -63,8 +64,8 @@ public class AutonomousRed extends LinearOpMode{
             b = sensor.blue();
 
             if(!foundJewel && r >= 200){
-                endtime = System.currentTimeMillis();
-                elapsedtime = endtime - time + con;
+                endTime = System.currentTimeMillis();
+                elapsedTime = endTime - (long)time + con;
                 foundJewel = true;
                 motorWheelFL.setPower(0.0);
                 motorWheelFR.setPower(0.0);
@@ -73,8 +74,8 @@ public class AutonomousRed extends LinearOpMode{
                 arm.setPosition(0.0);
                 arm.setPosition(0.5);
             }else if(!foundJewel && b >= 200){
-                endtime = System.currentTimeMillis();
-                elapsedtime = endtime - time + con;
+                endTime = System.currentTimeMillis();
+                elapsedTime = endTime - (long)time + con;
                 foundJewel = true;
                 motorWheelFL.setPower(0.0);
                 motorWheelFR.setPower(0.0);
@@ -87,7 +88,7 @@ public class AutonomousRed extends LinearOpMode{
                 motorWheelFR.setPower(1.0);
                 motorWheelBL.setPower(1.0);
                 motorWheelBR.setPower(1.0);
-            }else if (System.currentTimeMillis() - endtime < elapsedtime) {
+            }else if (System.currentTimeMillis() - endTime < elapsedTime) {
                 motorWheelFL.setPower(-1.0);
                 motorWheelFR.setPower(-1.0);
                 motorWheelBL.setPower(-1.0);

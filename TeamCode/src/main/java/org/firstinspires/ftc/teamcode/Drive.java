@@ -12,7 +12,7 @@ public class Drive extends LinearOpMode{
     private DcMotor motorWheelFR;
     private DcMotor motorWheelBL;
     private DcMotor motorWheelBR;
-    private DcMotor clawL;
+    private Servo clawL;
     private Servo clawR;
     private DcMotor linSlide;
 
@@ -23,7 +23,7 @@ public class Drive extends LinearOpMode{
         motorWheelBL = hardwareMap.get(DcMotor.class, "motorWheelBL");
         motorWheelBR = hardwareMap.get(DcMotor.class, "motorWheelBR");
         linSlide = hardwareMap.get(DcMotor.class, "linSlide");
-        clawL = hardwareMap.get(DcMotor.class, "clawL");
+        clawL = hardwareMap.get(Servo.class, "clawL");
         clawR = hardwareMap.get(Servo.class, "clawR");
 
         motorWheelFL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
@@ -41,7 +41,7 @@ public class Drive extends LinearOpMode{
         waitForStart();
         // run until the end of the match (driver presses STOP)
 
-        double startPositionL = 0;
+        double startPositionL = clawL.getPosition();
         double startPositionR = clawR.getPosition();
 
         while (opModeIsActive()) {
@@ -60,7 +60,7 @@ public class Drive extends LinearOpMode{
             double robotAngle = Math.atan2(gamepad1.left_stick_y, gamepad1.left_stick_x) - Math.PI / 4;
             double rightX = gamepad1.right_stick_x;
             
-	    final double v1 = r * Math.cos(robotAngle) - rightX;
+	        final double v1 = r * Math.cos(robotAngle) - rightX;
             final double v2 = -r * Math.sin(robotAngle) - rightX;
             final double v3 = r * Math.sin(robotAngle) - rightX;
             final double v4 = -r * Math.cos(robotAngle) - rightX;
@@ -85,9 +85,8 @@ public class Drive extends LinearOpMode{
 	    }
 
             movement += ((left_trigger)? 1:0) + ((right_trigger)? -1: 0);
-            clawL.setPower(0 - movement);
-            clawR.setPower(movement);
-            
+            if((clawL.getPosition() - movement) >= 0.0 && (clawL.getPosition() - movement) <= startPositionL) clawL.setPosition(clawL.getPosition() - movement);
+            if((clawR.getPosition() + movement) <= 1.0 && (clawL.getPosition() + movement) <= startPositionR) clawR.setPosition(clawR.getPosition() + movement);
 
             telemetry.addData("Left_trigger", this.gamepad1.left_trigger);
             telemetry.update();
